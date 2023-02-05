@@ -7,7 +7,7 @@
       <field name="model">lista_tareas.lista_tareas</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="tarea"/>
+          <field name="name"/>
           <field name="prioridad"/>
           <field name="urgente"/>
           <field name="realizada"/>

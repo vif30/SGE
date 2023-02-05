@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="tareas_kanban_view">
+      <field name="name">lista_tareas list</field>
+      <field name="model">lista_tareas.lista_tareas</field>
+      <field name="arch" type="xml">
+            <kanban default_group_by="stage_id">                <!-- Estos fields se cargan inicialmente y pueden ser utilizados por la lógica del Kanban -->
+                <field name="stage_id" />
+                <field name="name" />
+                <!-- Es importante añadir el id para el record.id.value posterior -->
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card oe-kanban_global_click">
+                            <field name="name"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id='action_tareas_kanban' model='ir.actions.act_window'>
+        <field name="name">Mis tareas (Kanban)</field>
+        <field name="res_model">project.task</field>
+        <field name="view_mode">kanban,tree,form</field>        <!-- Indicamos como contexto que la vista de referencia es la vista tareas_kanban_view.
+        mas información en https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html 
+        -->
+        <field name="context">{'kanban_view_ref': 'my_project.tareas_kanban_view'}</field>
+    </record>    <!-- Definimos los "Menu Item"-->
+</odoo>
