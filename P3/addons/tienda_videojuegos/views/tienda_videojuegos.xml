@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='tienda_videojuegos_action' model='ir.actions.act_window'>
+        <field name="name">Listado de videojuegos</field>
+        <field name="res_model">tienda.videojuegos</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- Menu item -->
+    <menuitem name="Tienda" id="tienda_base_menu"/>
+    <menuitem name="Videojuegos" id="tienda_videojuegos_menu" parent="tienda_base_menu" action="tienda_videojuegos_action"/>
+
+    <!-- Vista formulario -->
+    <record id="tienda_videojuegos_view_form" model="ir.ui.view">
+        <field name="name">Lista de videojuegos</field>
+        <field name="model">tienda.videojuegos</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="titulo"/>
+                    <field name="genero"/>
+                    <field name="fecha_publicacion"/>
+                    <field name="publisher"/>
+                    <field name="precio"/>
+                    <field name="precioIVA"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <!-- Tree(list) View -->
+    <record id="tienda_videojuegos_view_tree" model="ir.ui.view">
+        <field name="name">Lista de videojuegos</field>
+        <field name="model">tienda.videojuegos</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="titulo"/>
+                <field name="genero"/>
+                <field name="fecha_publicacion"/>
+                <field name="publisher"/>
+                <field name="precio"/>
+                <field name="precioIVA"/>
+            </tree>
+        </field>
+    </record>
+    <!-- Vista busqueda-->
+    <record id="tienda_videojuegos_view_search" model="ir.ui.view">
+        <field name="name">Lista de videojuegos</field>
+        <field name="model">tienda.videojuegos</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="titulo"/>
+            </search>
+        </field>
+    </record>
+</odoo>

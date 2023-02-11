@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='tienda_publisher_action' model='ir.actions.act_window'>
+        <field name="name">Publishers de videojuegos</field>
+        <field name="res_model">tienda.publisher</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- Menu item -->
+    <menuitem name="Tienda" id="tienda_base_menu" />
+    <menuitem name="Publishers" id="tienda_publisher_menu" parent="tienda_base_menu" action="tienda_publisher_action"/>
+
+    <!-- Definición de la Vista formulario -->
+    <record id="tienda_publisher_view_form" model="ir.ui.view">
+        <field name="name">Formulario de publishers de videojuegos</field>
+        <field name="model">tienda.publisher</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="id"/>
+                    <field name="nombre"/>
+                    <field name="pais"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Definición de la vista Tree -->
+    <record id="tienda_publisher_view_tree" model="ir.ui.view">
+        <field name="name">Lista de publishers de videojuegos</field>
+        <field name="model">tienda.publisher</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id"/>
+                <field name="nombre"/>
+                <field name="pais"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Definición de la vista busqueda-->
+    <record id="tienda_publisher_view_search" model="ir.ui.view">
+        <field name="name">Búsqueda de publishers de videojuegos</field>
+        <field name="model">tienda.publisher</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="id"/>
+                <field name="nombre"/>
+                <field name="pais"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>

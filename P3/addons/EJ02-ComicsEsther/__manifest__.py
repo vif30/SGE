@@ -9,7 +9,7 @@ Gestor de bibliotecas
 
     #Indicamos que es una aplicación
     'application': True,
-    'author': "Esther Arias",
+    'author': "Vicente Izquierdo",
     'category': 'Tools',
     'version': '0.1',
     'depends': ['base'],
